@@ -14,6 +14,6 @@ module.exports = (robot) ->
       robot.messageRoom room, "#{data.user} started deploying #{data.sha}..."
     else
       robot.messageRoom room, "#{data.user} finished deploying #{data.sha}..."
-      robot.messageRoom room, "Deploy target changed from #{data.previous_sha} to #{data.sha}..."
+      robot.messageRoom room, "Deploy target changed from #{data.previous_sha} to #{data.sha} [#{data.link}]"
 
     res.end ''
