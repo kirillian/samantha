@@ -11,9 +11,9 @@ module.exports = (robot) ->
     robot.logger.debug "capistrano-deploys: Received POST to /hubot/deploys with data = #{inspect data}"
 
     if data.event_type == 'start'
-      robot.messageRoom room, "#{data.user} started deploying #{data.sha}..."
+      robot.messageRoom room, "#{data.user} started deploying #{data.sha} to #{data.stage}"
     else
-      robot.messageRoom room, "#{data.user} finished deploying #{data.sha}..."
-      robot.messageRoom room, "Deploy target changed from #{data.previous_sha} to #{data.sha} [#{data.link}]"
+      robot.messageRoom room, "#{data.user} finished deploying #{data.sha} to #{data.stage}"
+      robot.messageRoom room, "#{data.stage} changed from #{data.previous_sha} to #{data.sha} [#{data.link}]"
 
     res.end ''
