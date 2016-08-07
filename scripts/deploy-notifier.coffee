@@ -14,6 +14,6 @@ module.exports = (robot) ->
       robot.messageRoom room, "#{data.user} started deploying #{data.sha} to #{data.stage}"
     else
       robot.messageRoom room, "#{data.user} finished deploying #{data.sha} to #{data.stage}"
-      robot.messageRoom room, "#{data.stage} changed from #{data.previous_sha} to #{data.sha} [#{data.link}]"
+      robot.messageRoom room, "Diff: [#{data.link}]"
 
     res.end ''
